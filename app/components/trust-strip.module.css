@@ -1,0 +1,306 @@
+.trustStrip {
+  width: 100%;
+  padding: 48px 0 62px;
+  color: #151922;
+  background: #fff;
+}
+
+.title {
+  max-width: 1120px;
+  margin: 0 auto 46px;
+  padding: 0 24px;
+  color: #111;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 650;
+  line-height: 1.15;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.title span {
+  color: #1767e8;
+}
+
+.marqueeViewport {
+  width: 100%;
+  padding: 8px 0 20px;
+  overflow: hidden;
+}
+
+.marqueeTrack {
+  --marquee-inset: 28px;
+  display: flex;
+  width: max-content;
+  animation: logoMarquee 48s linear infinite;
+  will-change: transform;
+}
+
+.marqueeViewport:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.logoGroup {
+  display: flex;
+  width: max-content;
+  flex: none;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  display: flex;
+  height: 80px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  border: 1px solid #edf2f8;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff 0%, #fff 58%, #f5faff 100%);
+  box-shadow: 0 8px 18px rgba(66, 104, 151, 0.1), inset 0 1px rgba(255, 255, 255, 0.92);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.paypal {
+  color: #1766bd;
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 750;
+}
+
+.notion {
+  color: #171717;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.notionMark {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.slack {
+  color: #252525;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.slackMark {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.slackMark i {
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border-radius: 99px;
+}
+
+.slackMark i:nth-child(1) {
+  top: 0;
+  left: 5px;
+  background: #36c5f0;
+}
+
+.slackMark i:nth-child(2) {
+  top: 5px;
+  right: 0;
+  background: #2eb67d;
+  transform: rotate(90deg);
+}
+
+.slackMark i:nth-child(3) {
+  right: 5px;
+  bottom: 0;
+  background: #e01e5a;
+}
+
+.slackMark i:nth-child(4) {
+  bottom: 5px;
+  left: 0;
+  background: #ecb22e;
+  transform: rotate(90deg);
+}
+
+.loom {
+  color: #282828;
+  font-size: 22px;
+  font-weight: 650;
+}
+
+.loomMark {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 3px solid #625df5;
+  border-radius: 50%;
+}
+
+.loomMark i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #625df5;
+}
+
+.monday {
+  color: #262626;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.mondayMark {
+  display: flex;
+  height: 23px;
+  align-items: center;
+  gap: 3px;
+  transform: skew(-18deg);
+}
+
+.mondayMark i {
+  width: 5px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+.mondayMark i:nth-child(1) {
+  background: #ffcb00;
+}
+
+.mondayMark i:nth-child(2) {
+  background: #ff3d57;
+}
+
+.mondayMark i:nth-child(3) {
+  background: #00c875;
+}
+
+.afterpay {
+  color: #111;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+@keyframes logoMarquee {
+  from {
+    transform: translateX(var(--marquee-inset));
+  }
+
+  to {
+    transform: translateX(calc(-50% + var(--marquee-inset)));
+  }
+}
+
+@media (max-width: 1023px) {
+  .trustStrip {
+    padding-top: 40px;
+    padding-bottom: 52px;
+  }
+
+  .title {
+    margin-bottom: 36px;
+    font-size: clamp(32px, 4.3vw, 44px);
+  }
+
+  .logoGroup {
+    gap: 22px;
+  }
+
+  .marqueeTrack {
+    --marquee-inset: 22px;
+    animation-duration: 54s;
+  }
+}
+
+@media (max-width: 760px) {
+  .trustStrip {
+    padding-top: 34px;
+    padding-bottom: 42px;
+  }
+
+  .title {
+    max-width: 440px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .logoGroup {
+    gap: 18px;
+  }
+
+  .pill {
+    height: 68px;
+    padding: 0 22px;
+  }
+
+  .wordmark {
+    font-size: 19px;
+  }
+
+  .paypal {
+    font-size: 21px;
+  }
+
+  .marqueeTrack {
+    --marquee-inset: 18px;
+    animation-duration: 64s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeViewport {
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: visible;
+  }
+
+  .marqueeTrack {
+    display: block;
+    width: 100%;
+    animation: none;
+    will-change: auto;
+  }
+
+  .logoGroup:not([aria-hidden="true"]) {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 0;
+  }
+
+  .logoGroup[aria-hidden="true"] {
+    display: none;
+  }
+
+  .pill {
+    height: 66px;
+    padding: 0 22px;
+  }
+}

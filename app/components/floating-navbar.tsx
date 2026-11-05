@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, Xmark } from "iconoir-react";
 import styles from "./floating-navbar.module.css";
 
 const links = [
@@ -23,18 +24,6 @@ function BrandMark() {
       <rect x="1" y="1" width="32" height="32" rx="12" fill="url(#brand-gradient)" />
       <path d="m17 7 2.8 7.2L27 17l-7.2 2.8L17 27l-2.8-7.2L7 17l7.2-2.8L17 7Z" fill="white" />
       <circle cx="17" cy="17" r="2.3" fill="#55CFFF" />
-    </svg>
-  );
-}
-
-function MenuIcon({ open }: { open: boolean }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className={styles.menuIcon}>
-      {open ? (
-        <path d="m6 6 12 12M18 6 6 18" />
-      ) : (
-        <path d="M4 7h16M4 12h16M4 17h16" />
-      )}
     </svg>
   );
 }
@@ -103,7 +92,11 @@ export default function FloatingNavbar() {
           onClick={() => setMenuOpen((open) => !open)}
           type="button"
         >
-          <MenuIcon open={menuOpen} />
+          {menuOpen ? (
+            <Xmark aria-hidden="true" className={styles.menuIcon} strokeWidth={1.7} />
+          ) : (
+            <Menu aria-hidden="true" className={styles.menuIcon} strokeWidth={1.7} />
+          )}
         </button>
 
         <nav
@@ -124,7 +117,7 @@ export default function FloatingNavbar() {
               }}
             >
               <span>{link.label}</span>
-              <span aria-hidden="true" className={styles.linkArrow}>↗</span>
+              <ArrowUpRight aria-hidden="true" className={styles.linkArrow} strokeWidth={1.7} />
             </a>
           ))}
         </nav>

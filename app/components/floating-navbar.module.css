@@ -193,8 +193,10 @@
 }
 
 .linkArrow {
+  width: 13px;
+  height: 13px;
+  flex: none;
   color: #8aa8c3;
-  font-size: 15px;
 }
 
 .wordmark:focus-visible,

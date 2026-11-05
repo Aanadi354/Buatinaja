@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
+import { ArrowRight, CloudSync, CodeBrackets, LightBulb } from "iconoir-react";
 import Image from "next/image";
 import buatinajaLogo from "../../public/logo-panjang.png";
 import styles from "./services-section.module.css";
@@ -46,39 +47,14 @@ const services: Service[] = [
 ];
 
 function ServiceIcon({ kind }: { kind: Service["icon"] }) {
-  if (kind === "strategy") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 32 32" className={styles.serviceIconSvg}>
-        <circle cx="16" cy="16" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.7" />
-        <circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" strokeWidth="1.7" />
-        <path d="m18.2 13.8 4.1-4.1m-13 13 4.1-4.1M16 3.5v3m0 19v3m12-12h-3m-18 0h-3" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
-      </svg>
-    );
-  }
+  const icons = {
+    strategy: LightBulb,
+    software: CodeBrackets,
+    cloud: CloudSync,
+  };
+  const Icon = icons[kind];
 
-  if (kind === "software") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 32 32" className={styles.serviceIconSvg}>
-        <rect x="5" y="6.5" width="22" height="19" rx="4" fill="none" stroke="currentColor" strokeWidth="1.7" />
-        <path d="m12.5 13-3 3 3 3m7-6 3 3-3 3m-2.2-7.5-2.6 9" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg aria-hidden="true" viewBox="0 0 32 32" className={styles.serviceIconSvg}>
-      <path d="M9.3 23.5h14.2a5 5 0 0 0 .4-10 8 8 0 0 0-15-1.6 5.8 5.8 0 0 0 .4 11.6Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
-      <path d="M16 15v8m-3-3 3 3 3-3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className={styles.arrowIcon}>
-      <path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
-    </svg>
-  );
+  return <Icon aria-hidden="true" className={styles.serviceIconSvg} strokeWidth={1.7} />;
 }
 
 function getPlacement(cardIndex: number, activeIndex: number) {
@@ -203,7 +179,7 @@ export default function ServicesSection() {
                   <span className={styles.footerSignal}><i /> Tailored for your business</span>
                   <a className={styles.learnMore} href="#contact">
                     <span>Learn More</span>
-                    <ArrowIcon />
+                    <ArrowRight aria-hidden="true" className={styles.arrowIcon} strokeWidth={1.7} />
                   </a>
                 </footer>
               </article>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, NavArrowDown, Plus, Xmark } from "iconoir-react";
 import styles from "./projects-section.module.css";
 
 const projects = [
@@ -37,14 +38,14 @@ function GoBarberPreview() {
       <div className={styles.barberNav}>
         <strong><span className={styles.barberMark}>G</span> GO BARBER</strong>
         <span>Services&nbsp;&nbsp; Our barbers&nbsp;&nbsp; About</span>
-        <b>Book now <span aria-hidden="true">↗</span></b>
+        <b>Book now <ArrowUpRight aria-hidden="true" className={styles.mockIcon} /></b>
       </div>
       <div className={styles.barberHero}>
         <div>
           <span className={styles.mockEyebrow}>YOUR NEXT GREAT CUT</span>
           <strong>Good hair.<br />Good day.</strong>
           <p>Find your style and book a time that works.</p>
-          <span className={styles.darkAction}>Explore services <i>↗</i></span>
+          <span className={styles.darkAction}>Explore services <ArrowUpRight aria-hidden="true" className={styles.mockIcon} /></span>
         </div>
         <div className={styles.barberPortrait} aria-hidden="true">
           <span className={styles.portraitHead} />
@@ -75,15 +76,15 @@ function SinkoPreview() {
         <div className={styles.sinkoProfile}><i>AR</i><span><b>Alex R.</b><small>Maintenance</small></span></div>
       </div>
       <div className={styles.sinkoMain}>
-        <div className={styles.sinkoTop}><span>Maintenance / Overview</span><b>Today, 24 Oct <i>⌄</i></b></div>
-        <div className={styles.sinkoHeading}><span><small>MONDAY, OCTOBER 24</small><strong>Maintenance overview</strong></span><b>+ New work order</b></div>
+        <div className={styles.sinkoTop}><span>Maintenance / Overview</span><b>Today, 24 Oct <NavArrowDown aria-hidden="true" className={styles.mockIcon} /></b></div>
+        <div className={styles.sinkoHeading}><span><small>MONDAY, OCTOBER 24</small><strong>Maintenance overview</strong></span><b><Plus aria-hidden="true" className={styles.mockIcon} /> New work order</b></div>
         <div className={styles.sinkoMetrics}>
           <span><small>Open work orders</small><b>18 <i>+3</i></b><em>Across all facilities</em></span>
           <span><small>Equipment online</small><b>96.8%</b><em><i /> System availability</em></span>
           <span><small>Due this week</small><b>07</b><em>Preventive maintenance</em></span>
         </div>
         <div className={styles.sinkoTable}>
-          <div className={styles.tableTitle}><b>Recent work orders</b><span>View all&nbsp; ↗</span></div>
+          <div className={styles.tableTitle}><b>Recent work orders</b><span>View all&nbsp; <ArrowUpRight aria-hidden="true" className={styles.mockIcon} /></span></div>
           <div className={styles.tableHead}><span>WORK ORDER</span><span>EQUIPMENT</span><span>PRIORITY</span><span>STATUS</span></div>
           <div className={styles.tableRow}><b>WO-2048</b><span>Hydraulic press 04</span><i>High</i><em>In progress</em></div>
           <div className={styles.tableRow}><b>WO-2047</b><span>Cooling pump 12</span><i>Normal</i><em>Scheduled</em></div>
@@ -98,13 +99,13 @@ function RamenPreview() {
   return (
     <div className={`${styles.mockScreen} ${styles.ramenScreen}`}>
       <div className={styles.browserBar}><i /><i /><i /><span>ramenmaster.co.id</span></div>
-      <div className={styles.ramenNav}><b>RAMEN<span>MASTER</span></b><span>Our story&nbsp;&nbsp;&nbsp; Menu&nbsp;&nbsp;&nbsp; Locations</span><strong>Find a table&nbsp; ↗</strong></div>
+      <div className={styles.ramenNav}><b>RAMEN<span>MASTER</span></b><span>Our story&nbsp;&nbsp;&nbsp; Menu&nbsp;&nbsp;&nbsp; Locations</span><strong>Find a table&nbsp; <ArrowUpRight aria-hidden="true" className={styles.mockIcon} /></strong></div>
       <div className={styles.ramenHero}>
-        <span className={styles.ramenCopy}><small>JAPANESE CRAFT. INDONESIAN SOUL.</small><b>A bowl worth<br />coming back for.</b><i>Thoughtful ingredients. Rich broth. Made fresh, every day.</i><strong>Discover our menu&nbsp; ↗</strong></span>
+        <span className={styles.ramenCopy}><small>JAPANESE CRAFT. INDONESIAN SOUL.</small><b>A bowl worth<br />coming back for.</b><i>Thoughtful ingredients. Rich broth. Made fresh, every day.</i><strong>Discover our menu&nbsp; <ArrowUpRight aria-hidden="true" className={styles.mockIcon} /></strong></span>
         <div className={styles.ramenBowl} aria-hidden="true"><span className={styles.bowlBroth}><i /><i /><i /><b /></span><span className={styles.bowlRim} /><span className={styles.bowlBase} /></div>
         <span className={styles.ramenStamp}>MADE<br />WITH<br />CARE</span>
       </div>
-      <div className={styles.ramenFoot}><span>01 — OUR SIGNATURE</span><b>Find your new favorite.</b><span>SCROLL TO EXPLORE ↓</span></div>
+      <div className={styles.ramenFoot}><span>01 — OUR SIGNATURE</span><b>Find your new favorite.</b><span>SCROLL TO EXPLORE <NavArrowDown aria-hidden="true" className={styles.mockIcon} /></span></div>
     </div>
   );
 }
@@ -202,7 +203,7 @@ export default function ProjectsSection() {
                   type="button"
                 >
                   <span>View Project</span>
-                  <span aria-hidden="true" className={styles.buttonArrow}>↗</span>
+                  <span aria-hidden="true" className={styles.buttonArrow}><ArrowUpRight className={styles.buttonArrowIcon} strokeWidth={1.8} /></span>
                 </button>
               </article>
             );
@@ -268,7 +269,7 @@ export default function ProjectsSection() {
                 onClick={() => dialogRef.current?.close()}
                 type="button"
               >
-                <span aria-hidden="true">×</span>
+                <Xmark aria-hidden="true" className={styles.closeIcon} strokeWidth={1.8} />
               </button>
             </div>
             <p className={styles.projectCategory}><span />{openProject.category}</p>

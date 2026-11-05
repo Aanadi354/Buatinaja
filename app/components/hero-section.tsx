@@ -1,41 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { ArrowRight, Check, ClipboardCheck, GraphUp, LightBulb } from "iconoir-react";
 import Image from "next/image";
 import buatinajaLogo from "../../public/logo-panjang.png";
 import styles from "./hero-section.module.css";
-
-function BrandMark() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 32 32" className={styles.brandMark}>
-      <circle cx="16" cy="16" r="15" fill="currentColor" />
-      <path
-        d="M16 7.5 18.1 12l4.7 1-3.3 3.5.6 4.8-4.1-2.4-4.1 2.4.6-4.8-3.3-3.5 4.7-1L16 7.5Z"
-        fill="none"
-        stroke="white"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <circle cx="16" cy="15.5" r="2.2" fill="white" />
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className={styles.arrowIcon}>
-      <path
-        d="M4.5 10h10m-4-4 4 4-4 4"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-    </svg>
-  );
-}
 
 export default function HeroSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -80,7 +49,7 @@ export default function HeroSection() {
               onChange={() => setSubmitted(false)}
             />
             <button type="submit" className={styles.submitButton}>
-              <span className={styles.submitIcon}><ArrowIcon /></span>
+              <span className={styles.submitIcon}><ArrowRight aria-hidden="true" className={styles.arrowIcon} strokeWidth={1.7} /></span>
               <span>Get Started</span>
             </button>
           </form>
@@ -92,7 +61,7 @@ export default function HeroSection() {
         <div className={styles.dashboardDeck} role="group" aria-label="Sample project dashboard cards">
           <div className={`${styles.dashboardStack} ${styles.projectStack}`}>
             <article className={`${styles.dashboardCard} ${styles.projectSummaryCard}`}>
-              <span className={styles.cardIcon}><BrandMark /></span>
+              <span className={styles.cardIcon}><ClipboardCheck aria-hidden="true" className={styles.cardIconSymbol} strokeWidth={1.7} /></span>
               <span className={styles.summaryText}>
                 <small>Project intake</small>
                 <strong>IT consultation</strong>
@@ -102,7 +71,7 @@ export default function HeroSection() {
 
             <article className={`${styles.dashboardCard} ${styles.projectCard}`}>
               <div className={styles.cardTopline}>
-                <span className={styles.cardIcon}><BrandMark /></span>
+                <span className={styles.cardIcon}><GraphUp aria-hidden="true" className={styles.cardIconSymbol} strokeWidth={1.7} /></span>
                 <span className={styles.cardLabel}>Service plan</span>
                 <span className={styles.statusDot} aria-label="Sample status" />
               </div>
@@ -118,7 +87,7 @@ export default function HeroSection() {
 
           <article className={`${styles.dashboardCard} ${styles.consultCard}`}>
             <div className={styles.cardTopline}>
-              <span className={styles.cardIcon}><BrandMark /></span>
+              <span className={styles.cardIcon}><LightBulb aria-hidden="true" className={styles.cardIconSymbol} strokeWidth={1.7} /></span>
               <span className={styles.cardLabel}>Project overview</span>
             </div>
             <h2>IT Consultation</h2>
@@ -149,7 +118,7 @@ export default function HeroSection() {
 
             <article className={`${styles.dashboardCard} ${styles.clientCard}`}>
               <div className={styles.cardTopline}>
-                <span className={styles.cardIcon}><BrandMark /></span>
+                <span className={styles.cardIcon}><Check aria-hidden="true" className={styles.cardIconSymbol} strokeWidth={1.7} /></span>
                 <span className={styles.cardLabel}>Sample project status</span>
               </div>
               <div className={styles.clientMetrics}>

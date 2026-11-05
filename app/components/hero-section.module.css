@@ -488,9 +488,10 @@
   background: #e8f2ff;
 }
 
-.cardIcon .brandMark {
-  width: 21px;
-  height: 21px;
+.cardIconSymbol {
+  width: 16px;
+  height: 16px;
+  color: #1767e8;
 }
 
 .cardLabel,

@@ -179,6 +179,19 @@
   font-size: 14px;
 }
 
+.buttonArrowIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.mockIcon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  flex: none;
+  vertical-align: middle;
+}
+
 .visualColumn {
   position: sticky;
   top: 112px;
@@ -956,6 +969,11 @@
   cursor: pointer;
   font-size: 21px;
   line-height: 1;
+}
+
+.closeIcon {
+  width: 15px;
+  height: 15px;
 }
 
 .dialogTitle {

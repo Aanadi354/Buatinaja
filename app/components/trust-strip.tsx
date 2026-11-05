@@ -51,7 +51,7 @@ function BrandGroup({ duplicate = false }: { duplicate?: boolean }) {
 
 export default function TrustStrip() {
   return (
-    <section className={styles.trustStrip} aria-labelledby="trust-strip-title">
+    <section className={styles.trustStrip} id="clients" aria-labelledby="trust-strip-title">
       <h2 className={styles.title} id="trust-strip-title">
         Trusted By More Than <span>+10</span> Users
       </h2>

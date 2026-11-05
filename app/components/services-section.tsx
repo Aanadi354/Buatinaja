@@ -128,7 +128,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className={styles.servicesSection} aria-labelledby="services-title">
+    <section className={styles.servicesSection} id="services" aria-labelledby="services-title">
       <header className={styles.sectionHeader}>
         <p className={styles.eyebrow}>
           <Image src={buatinajaLogo} alt="Buatinaja" className={styles.eyebrowLogo} />

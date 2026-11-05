@@ -1,6 +1,6 @@
 .servicesSection {
   position: relative;
-  padding: 78px 0 104px;
+  padding: 20px 0 104px;
   overflow: hidden;
   color: #151922;
   background: #fcfcfe;
@@ -35,7 +35,7 @@
 .eyebrowLogo {
   display: block;
   width: auto;
-  height: 30px;
+  height: 60px;
   max-width: 100%;
   object-fit: contain;
 }

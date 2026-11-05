@@ -37,20 +37,7 @@ function ArrowIcon() {
   );
 }
 
-function MenuIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className={styles.menuIcon}>
-      <rect x="3" y="3" width="14" height="14" rx="4" fill="none" stroke="currentColor" />
-      <circle cx="7" cy="7" r="1" fill="currentColor" />
-      <circle cx="13" cy="7" r="1" fill="currentColor" />
-      <circle cx="7" cy="13" r="1" fill="currentColor" />
-      <circle cx="13" cy="13" r="1" fill="currentColor" />
-    </svg>
-  );
-}
-
 export default function HeroSection() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -65,37 +52,7 @@ export default function HeroSection() {
         <span aria-hidden="true" className={`${styles.sculpture} ${styles.sculptureLeft}`} />
         <span aria-hidden="true" className={`${styles.sculpture} ${styles.sculptureRight}`} />
 
-        <header className={styles.navbar}>
-          <a className={styles.wordmark} href="#home" aria-label="Buatinaja home">
-            <BrandMark />
-            <span>Buatinaja</span>
-          </a>
-
-          <div className={styles.menuWrap}>
-            <button
-              className={styles.menuButton}
-              type="button"
-              aria-expanded={menuOpen}
-              aria-controls="hero-navigation"
-              onClick={() => setMenuOpen((open) => !open)}
-            >
-              <MenuIcon />
-              <span>Menu</span>
-            </button>
-            {menuOpen && (
-              <nav className={styles.menuPanel} id="hero-navigation" aria-label="Main navigation">
-                <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-                <a href="#contact" onClick={() => setMenuOpen(false)}>Start a project</a>
-              </nav>
-            )}
-          </div>
-        </header>
-
         <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>
-            <BrandMark />
-            <span>IT Solutions for Modern Business</span>
-          </p>
           <h1 className={styles.heading} id="hero-title">
             Build Smarter Digital Experiences
             <br className={styles.desktopBreak} /> with{" "}
